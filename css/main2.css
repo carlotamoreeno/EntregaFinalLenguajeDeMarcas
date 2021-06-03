@@ -1,0 +1,426 @@
+/*Ayuda plantilla OnlineTutorials*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /*background: linear-gradient(#8b016a, #6f1159);*/
+    /*background-color: rgb(255, 255, 255);*/
+    background: url("../img/fondoaladin.jpg");
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+#header{/*Menú que esta a la derecha*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+#header #fotologo{
+    text-align: center;
+    height: 55px;
+}
+#header .logo{/*Donde va mi nombre y mi cara de dibujo*/
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 1em;
+    text-decoration: none;
+    font-family: 'Rancho', cursive;
+}
+#header .navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header .navigation li{
+    list-style: none;
+    margin-left: 20px;
+}
+#header .navigation li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 20px;
+}
+#header .navigation li a:hover, #header .navigation li a.active{
+    background: #fff;
+    color: #111;
+}
+/*Donde van a ir las imagenes del parallax*/
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+section img#lamp{
+    mix-blend-mode: screen;
+}
+section img#masjid{
+    transform: translateY(-20px);
+}
+section img#stars2{
+    display: none;
+}
+#text{/*Donde va el nombre de aladdin*/
+    position: absolute;
+    top: 50%;
+    right: -100%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 10vw;
+    white-space: nowrap;
+    text-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    font-family: 'Rancho', cursive;
+}
+.sec{/*Donde va a ir la historia de aladdin*/
+    position: relative;
+    padding: 100px;
+    background: #96283a;
+}
+.sec h2{
+    font-size: 5rem;
+    color: #fff;
+    font-family: 'Rancho', cursive;
+    margin-bottom: 10px;
+}
+.sec p{
+    font-family: 'Dancing Script', cursive;
+    color: #fffacd;
+    font-size: 1.9rem;
+    color:rgb((232, 195, 158));
+    font-weight: 300;
+}
+/*Imagenes de la historia de aladdin*/
+.contenedor-imagenes{
+    display: flex;/*Haga elementos flexibles*/
+    width: 90%;/*de lo que me ocupe del area de trabajo que haya porcentaje como un marco, siempre que ocupen elementos 90%*/
+    margin: auto;/*dependiendo del dispositivo*/
+    justify-content: space-around;/*Espacio alrededor de las img*/
+    flex-wrap: wrap;/*Que se adapte a la ubicacion de la caja*/
+    border-radius: 3px;/*Bordes redondeados*/
+}
+.contenedor-imagenes .imagen{
+    width: 33%;
+    position: relative;/*no dependian de la parte superior si no del elemento depende del div no de la clase antonio-raul clase absoluta antonio se mueve respecto a la clase*/
+    height: 250px;
+    margin-bottom: 5px ;/*Separado de la parte de abajo separacion de filas*/
+    box-shadow: 0px 0px 3px 0px rgba(0, 0n, 0, 0.75);/*dandole una capa de sombreado el rgba nomenclatura colores la capa alfa contraste va con . no ,*/
+}
+.imagen img{
+    width: 100%;
+    height: 100%;
+    /*Imagenes que acupen 100 ancho altura cover para que se ajuste espacio contener  */
+    object-fit: cover;/*contenedor de la imagen*/
+}
+/*Trabajar con las capas*/
+.overlay {
+    position: absolute;/*si se mueve capa mueve posición*/
+    bottom: 0px;
+    left: 0px;/*capa juntos*/
+    background: #d3d0b69e;
+    width: 100%;/*Seajuste capa*/
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease;/*Lo de adria*/
+}
+.overlay h2{
+    color: white;
+    font-size: 3rem;
+    /*grosor linea*/
+    font-weight: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.imagen:hover .overlay{
+    height: 100%;
+    cursor: pointer;
+}
+
+/*Personajes*/
+.r{
+    background: url('../img/bgCV.jpg');
+}
+.divcarrusel{
+    padding-top: 0;
+    margin: 500px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: url('../img/bgCV.jpg');
+    align-items: center;
+   
+}
+#personajes .contenedor-galeria{
+    margin-left: 700px;
+   left: 6rem;
+}
+.contenedor-galeria{
+    width: 900px;
+    height: 500px;
+    overflow: hidden;
+    margin: 70px auto;
+    align-items: center;
+}
+.carru{
+    left: 6rem;
+    align-items: center;
+    height: 600px;
+    width: 400px;
+}
+.mezquita{
+    background:#96283a ;
+}
+#mezquita{
+    width: 100%;
+    height: 100%;
+}
+
+/*Leyendas*/
+.contenedor-galeria-leyendas{
+    width: 800px; /*Tamaño del contenedor para poder mostrar las 5 imagenes*/
+    height: 320px;/*Altura del contenedor*/
+    overflow: hidden;/*Cuando haya un desbordamiento de las imagenes no sobresalgan por fuera la caja queden como cubiertas*/
+    margin: 50px auto;/*Luego un margin de 50 arriba y abajo y automatico laterales*/
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);/*Efecto de sombreado*/
+}
+.contenedor-galeria-leyendas li{
+    position: relative;/*Que dependan del elemento padre*/
+    display: block;/*Bloque comun*/
+    width: 160px;/*Anchura de estos elementos (800px del contenedor % 5 imagenes = 160px por imagen*/
+    float: left;/*Para que el posicionamiento sea de izq a der*/
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);/*Efecto de sombreado*/
+    transition: all 0.5s;/*Todas las transiciones de 0.5s*/
+}
+.contenedor-galeria-leyendas ul:hover li{
+    width: 40px; /*Tamaño que coja por 800px-640px=160px%4=tamaño de las imagenes aplicando el hover*/
+    filter: brightness(50%);/*Filtro del CSS con bri... para darle efecto 50% respecto al color que tengo en ese momento*/
+}
+.contenedor-galeria-leyendas ul li:hover{
+    width: 640px;/*Tamaño imagen*/
+    filter: brightness(100%);/*La "limunosidad" 100%*/
+}
+.contenedor-galeria-leyendas li img{/*La lista desordenada con los elementos que contienen las imagenes*/
+   display: block;/*Todos un bloque*/
+   width: 640px;/*Con un tamaño de 640px anchura foto*/
+   height: 100%;/*"Tamaño 100%"*/
+}
+.titulo-imagen{/*Voy con el titulo de las imagenes*/
+    background: rgba(0, 0, 0, 0.8);/*Color de fondo*/
+    position: absolute;/*...*/
+    top: 100%;
+    width: 100%;
+    display: block;
+    transition: all 0.5s ease;/*Que vaya un poco más rapido más lento más rapido...*/
+    animation: cambia-color 10s linear infinite;/*Cambie colores*/
+    background-size: 400% 400% ;/*Aumentar tamaño*/ 
+}
+@keyframes cambia-color{
+    0%{
+        background-position: 0%, 50%;
+    }
+    50%{
+        background-position: 100%, 50%;
+    }
+    100%{
+        background-position: 0%, 100% ;
+    }
+}
+.titulo-imagen a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    text-shadow: 0 1px 2px #000000;
+    transition: all 0.5s ease;
+}
+.contenedor-galeria-leyendas ul li:hover .titulo-imagen{
+    top: 0%;
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);/*10px del video*/
+}
+.titulo-imagen:hover a{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+.titulo-imagen:active{
+    background: rgba(225, 225, 225, 0.5);
+}
+@media (max-width: 992px){
+    #header{
+        padding: 20px;
+    }
+    #header .logo{
+        font-size: 1.5em;
+    }
+    #header .navigation{
+        display: none;
+    }
+    #header .navigation.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        /*background: #6f1159;*/
+        background: black;
+    }
+    #header .navigation li{
+        margin-left: 0;
+
+    }
+    #header .navigation li a{
+        font-size: 1.7em;
+        margin: 5px 0;
+        border-radius: 30px;
+        display: inline-block;
+    }
+    .toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background-image: url("../icon/menu.png");
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 10000;
+    }
+    .toggle.active{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-image: url("../icon/close.png");
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat; 
+    }
+    .sec{
+        padding: 20px;
+    }
+    .sec h2{
+        font-size: 3em;
+    }
+    section img#stars2{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    section img#masjid{
+        transform: translateY(-5px);
+    }
+    #text{
+        font-size: 17vw;
+    }
+    .contenedor-imagenes{
+        width: 95%;
+    }
+    .divcarrusel{
+        padding-top: 0;
+        margin: 100px;
+        margin-top: 0;
+        margin-bottom: 0;
+        background: url('../img/bgCV.jpg');
+        align-items: center;
+       
+    }
+}
+@media screen and (max-width:700px){/*Tmaño maximo contenido 95% cambia imagen*/
+
+    .contenedor-imagenes{
+        width: 90%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 48%;
+    }
+    .contenedor-galeria{
+        width: 900px;
+        height: 500px;
+        overflow: hidden;
+        margin: 50px auto;
+    }
+    .carru{
+        height: 500px;
+        width: 230px;
+    }
+    
+    h1{
+        font-size: 22px;
+    }
+    .contenedor-imagenes{
+        width: 98%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 80%;
+    }
+    .overlay h2{
+        font-size: 1rem;
+    }
+    
+
+    .contenedor-galeria-leyendas{
+        width: 570px; /*Tamaño del contenedor para poder mostrar las 5 imagenes*/
+        height: 100px;/*Altura del contenedor*/
+        overflow: hidden;/*Cuando haya un desbordamiento de las imagenes no sobresalgan por fuera la caja queden como cubiertas*/
+        margin: 50px auto;/*Luego un margin de 50 arriba y abajo y automatico laterales*/
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);/*Efecto de sombreado*/
+    }
+    .contenedor-galeria-leyendas li{
+        position: relative;/*Que dependan del elemento padre*/
+        display: block;/*Bloque comun*/
+        width: 80px;/*Anchura de estos elementos (800px del contenedor % 5 imagenes = 160px por imagen*/
+        float: left;/*Para que el posicionamiento sea de izq a der*/
+        box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);/*Efecto de sombreado*/
+        transition: all 0.5s;/*Todas las transiciones de 0.5s*/
+    }
+    .contenedor-galeria-leyendas ul:hover li{
+        width: 20px; /*Tamaño que coja por 800px-640px=160px%4=tamaño de las imagenes aplicando el hover*/
+        filter: brightness(50%);/*Filtro del CSS con bri... para darle efecto 50% respecto al color que tengo en ese momento*/
+    }
+    .contenedor-galeria-leyendas ul li:hover{
+        width: 320px;/*Tamaño imagen*/
+        filter: brightness(100%);/*La "limunosidad" 100%*/
+    }
+    .contenedor-galeria-leyendas li img{/*La lista desordenada con los elementos que contienen las imagenes*/
+       display: block;/*Todos un bloque*/
+       width: 320px;/*Con un tamaño de 640px anchura foto*/
+       height: 100%;/*"Tamaño 100%"*/
+    }
+    .titulo-imagen{/*Voy con el titulo de las imagenes*/
+        background: rgba(0, 0, 0, 0.8);/*Color de fondo*/
+        position: absolute;/*...*/
+        top: 100%;
+        width: 100%;
+        display: block;
+        transition: all 0.5s ease;/*Que vaya un poco más rapido más lento más rapido...*/
+        animation: cambia-color 10s linear infinite;/*Cambie colores*/
+        background-size: 400% 400% ;/*Aumentar tamaño*/ 
+    }
+}
